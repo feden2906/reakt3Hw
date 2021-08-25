@@ -1,6 +1,6 @@
 import './Users.css'
 import {useEffect, useState} from "react";
-import {getPostsofUser, getUsers} from "../../services/user.fetch.service";
+import { getUsers} from "../../services/user.fetch.service";
 import User from "../User/User";
 
 export default function Users() {
@@ -8,22 +8,22 @@ export default function Users() {
     let [user, setUser] = useState(null);
 
 
-    useEffect(() => {
-        getUsers().then(value => setUsers([...value]))
-    }, []);
-    const choseUser = (u) => {
-        setUser({...u})
-        getPostsofUser(u.id).then(value => console.log(value))
-    }
+    useEffect(() => {getUsers().then(value => setUsers([...value]))}, []);
+
+        const choseUser = (u) => {
+            setUser({...u});
+        };
 
     return (
-        <div className={'wrap'}>
+        <div className={"wrap"}>
             <div className={"user-box"}>
                 {
                     users.map(value => <User
                         key={value.id}
                         item={value}
-                        choseUser={choseUser}/>)
+                        choseUser={choseUser}
+
+                    />)
                 }
             </div>
             {
@@ -31,6 +31,7 @@ export default function Users() {
                     {JSON.stringify(user)}
                 </div>)
             }
+
         </div>
     );
 }
