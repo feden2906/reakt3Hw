@@ -23,7 +23,7 @@ export default function Comments() {
                     comments.map(value => <Comment
                         key={value.id}
                         item={value}
-                        chosePost={chooseComment}/>
+                        chooseComment={chooseComment}/>
                     )
                 }
 
