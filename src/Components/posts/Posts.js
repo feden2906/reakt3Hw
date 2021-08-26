@@ -1,11 +1,12 @@
 import {useEffect, useState} from "react";
 import {getPostsofUser} from "../../services/post.fetch";
 import Post from "../post/Post";
+import './Posts.css'
 
 export default function Posts() {
 
-    let [posts, setPosts] = useState([]);
-    let [post, setPost] = useState(null);
+    const [posts, setPosts] = useState([]);
+    const [post, setPost] = useState(null);
 
     useEffect(() => {
         getPostsofUser().then(value => setPosts([...value]))
@@ -27,7 +28,14 @@ export default function Posts() {
                 }
 
             </div>
+
+            {post && (
+                <div className={"chosen-two"}>
+                    {JSON.stringify(post)}
+                </div>
+            )}
+
         </div>
 
-       );
-   }
+    );
+}

@@ -1,18 +1,20 @@
 import './Users.css'
 import {useEffect, useState} from "react";
-import { getUsers} from "../../services/user.fetch.service";
+import {getUsers} from "../../services/user.fetch.service";
 import User from "../User/User";
 
 export default function Users() {
-    let [users, setUsers] = useState([]);
-    let [user, setUser] = useState(null);
+    const [users, setUsers] = useState([]);
+    const [user, setUser] = useState(null);
 
 
-    useEffect(() => {getUsers().then(value => setUsers([...value]))}, []);
+    useEffect(() => {
+        getUsers().then(value => setUsers([...value]))
+    }, []);
 
-        const choseUser = (u) => {
-            setUser({...u});
-        };
+    const choseUser = (u) => {
+        setUser({...u});
+    };
 
     return (
         <div className={"wrap"}>

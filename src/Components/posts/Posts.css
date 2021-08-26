@@ -1,0 +1,16 @@
+.index {
+    display: flex;
+}
+
+.index > div {
+    width: 50%;
+}
+
+.Posts-box {
+    background: brown;
+}
+
+.chosen-two {
+    background: blue;
+    color: white;
+}

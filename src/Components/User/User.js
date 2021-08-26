@@ -9,7 +9,7 @@ export default function User({item, choseUser}) {
         <div>
             {item.id} - {item.name}
             <button onClick={onClickUserChoose}>details</button>
-            {/*<button onClick={onClickComChoose}>comment</button>*/}
+           
         </div>
     );
 }

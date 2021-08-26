@@ -1,0 +1,16 @@
+.hakah {
+    display: flex;
+}
+
+.hakah > div {
+    width: 50%;
+}
+
+.Comments-Box {
+    background: aqua;
+}
+
+.chosen-three {
+    background: indianred;
+    color: cornsilk;
+}
